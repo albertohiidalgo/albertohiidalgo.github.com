@@ -1,0 +1,173 @@
+html{
+	font-family: 'Nunito', sans-serif;
+}
+header{
+	font-family: 'Lobster', cursive;
+}
+a{
+	text-decoration: none;
+	color:#025ACC;
+}
+
+img{
+	max-width: 100%; /*para que la imagen ocupe el 100% y no más que eso, para que no se desborde*/
+}
+
+a:hover{
+	opacity: 0.8; /*para opacar el link al pasar el mouse -- ver tema de CSS-pseudo clases del 
+Curso Profesional Desarrollo Web*/
+}
+
+.title{
+	text-transform: capitalize; /*agrega la primera letra mayuscula de las palabras*/
+	text-align: center;
+}
+.container{
+	background: #C9D6FF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;
+	display: flex; /*los elementos de .content adoptan el posicionamiento usando la herramienta flex */
+	align-items: center;
+	justify-content: center; /*align-items y justify-content colocan a .content en el centro*/
+}
+.content{
+	max-width: 960px;
+	/*max-height: 500px; se elimina por la condición que se utiliza con el @media
+	ver tema de DISEÑO RESPONSIVO-MEDIA QUERIES del Curso Profesional Desarrollo Web*/
+	width: 100%;
+	height: 80vh; /*se midificó por la condición que se utiliza con el @media, estaba como height:100%;
+	ver tema de DISEÑO RESPONSIVO-MEDIA QUERIES del Curso Profesional Desarrollo Web*/
+	background-color: #fff;
+	/*box-shadow: diferenciahorizaontal diferencivertical desenfoque amplitud color;*/
+	box-shadow: 0px 5px 100px 10px #7C7F7F; /*se aplica la sombra - ver tema de CSS-bordes y sombras del Curso Profesional Desarrollo Web */
+	border-radius: 5px; /*border-radius se utiliza para redondear las esquinas*/
+	position: relative; /*ver tema de CSS-POSICIONES (ABSOLUTE,FIXED,RELATIVE) EN CSS del Curso Profesional Desarrollo Web*/
+	/*padding: 1.8em;*/ /*para despegar las letras de los bordes*//*se pasó a @media(min-width: 900px)
+	ver tema de DISEÑO RESPONSIVO-MOBILE FIRST del Curso Profesional Desarrollo Web*/
+	overflow: scroll; /*el scroll solo le pertenece al mismo elemento (no al cuerpo de la pagina), en este caso todo lo que está dentro de .content - 
+	ver tema de DISEÑO RESPONSIVO-OVERFLOW Y UNIDADES RELATIVAS del Curso Profesional Desarrollo Web */
+}
+
+/*se movieron del @media(max-width: 600px)- ver tema de DISEÑO RESPONSIVO-MOBILE FIRST del Curso Profesional Desarrollo Web
+los comentarios de abajo corresponden a media queries, se adaptó para moviles y a lo ultimo se adapta para PC*/
+.content{
+		padding: 1.8em;
+	}
+	td{
+		display: block; /*transforma las columnas en filas en la resolución declarada con @media*/
+		width: 100%; /*se declara que en esta resolución los td tienen que ocupar todo el anche de la fila*/
+	}
+	td:nth-of-type(1){ /*esta pseudoclase selecciona el primer td de cada una de las filas de la tabla, por eso se le asigna 
+		el 1,*/
+		font-size: 1.5em;
+		font-weight: bold;
+		color: #447F77;
+	}
+	th{
+		display: none;/*oculta los encabezados*/
+	}
+
+.actions{
+	position: absolute;
+	top:1em;
+	right:1em;
+}
+
+.close{
+	height: 40px;
+	width: 40px;
+	color:white;
+	border-radius: 50%;
+	background-color: #B6BF9D;
+	display:inline-block;
+	/*box-shadow: 0px 5px 100px 10px #7C7F7F;*/
+	font-weight: 400;
+	cursor:pointer;
+	/*las ultimas 3 centran la X, por eso se pone en un span*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paragraph{
+	line-height: 1.5em;
+	font-weight: 300;
+}
+
+.fa-star{
+	color:#FFD400;
+}
+
+.table{
+	width: 100%;
+	border-spacing: 0;
+}
+
+.table td, .table th{
+	padding: 1em;
+	text-align: left;
+}
+
+.table tr:nth-child(even){background-color: #86FFE9} /*colorea las filas pares de la tabla*/
+
+.title-item{
+	/*border-bottom-style: solid; --se aplica solamente el borde inferior--
+	border-width: 3px;
+	border-color: #447F77;*/
+	/*ver tema de CSS-SHORTHAND PROPERTIES en el Curso Profesional Desarrollo Web */
+	border-bottom: #447F77 solid 3px; /*es lo mismo que las lineas anteriores*/
+	padding-bottom: 1em;
+	font-size: 2em;
+}
+
+.address{
+	font-weight: bold; /*para letras mas gruesas*/
+	color:#35597F;
+	font-size: 1.2em;
+	/*las ultimas dos lineas de abajo sirven para agregar un espacio entre la dirección y la imagen*/
+	margin-top: 1em;
+	display: inline-block;
+}
+
+.main-image{
+	float:left; /*ajusta la imagen y el texto*/
+	margin-right: 1em; /*despega la imagen del texto*/
+	height: 250px /*altura de la imagen*/
+}
+
+.position{
+	/*ver tema de CSS-SHORTHAND PROPERTIES en el Curso Profesional Desarrollo Web */
+	background-color: #447F77;
+	color:white;
+	padding: 10px;
+	border-radius: 3px;
+	margin-right: 0.5em;
+}
+
+/*ver tema de DISEÑO RESPONSIVO-MEDIA QUERIES del Curso Profesional Desarrollo Web*/
+@media(min-width: 900px){ /*ver tema de DISEÑO RESPONSIVO-MOBILE FIRST del Curso Profesional Desarrollo Web
+	aquí se adapta para PC*/
+	th{
+		display: table-cell;
+	}
+	td{
+		width: auto;
+		display: table-cell;
+	}
+	td:nth-of-type(1){
+		font-size: 1em;
+	}
+	.content{
+		padding: 1.8em;
+	}
+	
+}
+
+@media (min-height: 550px) { /*@media solo se aplica al cumplir la condicion que se especifica en los (),
+	aqui se especifica un alto minimo de 500px*/
+	.content{ /*esta configuración se aplica solo si se cumple con la condicion de los (),
+		en este caso si se cumple con la condición, la altura será de 500px*/
+		height: 500px;
+	}
+}
