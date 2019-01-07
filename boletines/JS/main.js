@@ -32,7 +32,7 @@ links.forEach(function(link){
 		//retrasamos el redireccionamiento con el tiempo que le agregamos y así se alcanza a ver la animacion que le agregamos
 		setTimeout(function(){
 			location.href = "/boletines";	
-		}, 600);
+		},600);
 		
 		return false;
 	});
